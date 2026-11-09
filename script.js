@@ -1,5 +1,3 @@
-"use strict";
-
 // Avaliação: cada condição corresponde a um dos 12 campos.
 const formulario = document.getElementById("glj_formulario");
 
