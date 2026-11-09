@@ -150,3 +150,125 @@ section { border-left: .35rem solid #b44464; }
 .glj_aba[aria-selected="true"] { color: #17121b; background: var(--destaque); }
 .glj_pergunta[open] summary { color: var(--destaque); }
 button:disabled { opacity: .6; cursor: default; }
+
+/* Capa editorial, vitrine e blocos da edição. */
+.glj_portal {
+    --fundo: #111012;
+    --painel: #1d1a20;
+    --borda: #746a73;
+    --destaque: #ffcc36;
+    grid-template-areas: "cabecalho" "menu" "conteudo" "rodape";
+    grid-template-columns: minmax(0, 1fr);
+}
+.glj_cabecalho { padding: 0; border-top: 0; background: #19161b; }
+.glj_faixa {
+    display: flex;
+    justify-content: space-between;
+    gap: .5rem 1rem;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: .45rem max(1rem, calc((100% - 78rem) / 2));
+    background: var(--destaque);
+    color: #171218;
+    font-size: .72rem;
+    font-weight: 850;
+}
+.glj_marca {
+    max-width: 80rem;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: .2rem 1.2rem;
+}
+.glj_marca a { color: var(--texto); text-decoration: none; font-size: 1.3rem; font-weight: 900; }
+.glj_marca strong { color: var(--destaque); }
+.glj_marca small { font-size: .68rem; letter-spacing: .15em; }
+.glj_menu { padding: 0 1rem; border-bottom: 1px solid var(--borda); }
+.glj_menu ul { max-width: 78rem; margin: .35rem auto; gap: .25rem .4rem; }
+nav.glj_menu ul li a { color: var(--texto); font-size: .86rem; text-decoration: none; }
+nav.glj_menu ul li a:hover { color: var(--destaque); }
+.glj_principal { grid-area: conteudo; }
+.glj_capa {
+    display: grid;
+    grid-template-areas: "texto mural";
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1rem, 4vw, 4rem);
+    margin: 0;
+    padding: clamp(2rem, 6vw, 6rem) max(1rem, calc((100% - 78rem) / 2));
+    border: 0;
+    border-radius: 0;
+    background: repeating-linear-gradient(135deg, #201921 0 16px, #251c26 16px 18px);
+}
+.glj_capaTexto { grid-area: texto; min-width: 0; }
+.glj_capa h1 {
+    font-size: clamp(2.65rem, 6.25vw, 6.5rem);
+    font-weight: 950;
+    line-height: .95;
+    letter-spacing: -.06em;
+}
+.glj_capa h1 em { color: var(--destaque); font-style: normal; }
+.glj_capa h2 { color: var(--texto); font-size: 1.2rem; }
+.glj_rotulo { color: var(--destaque); font-size: .75rem; font-weight: 850; letter-spacing: .14em; }
+.glj_linkCapa { padding: .35rem; }
+#glj_banner {
+    grid-area: mural;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border: 1px solid #9e6070;
+    box-shadow: .45rem .45rem 0 #a14360;
+}
+.glj_conteudo {
+    display: block;
+    width: min(100%, 80rem);
+    padding: 0 1rem;
+}
+.glj_conteudo section {
+    padding: clamp(1.65rem, 4vw, 3.5rem) 0;
+    margin: 0;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #554852;
+    border-radius: 0;
+    min-width: 0;
+}
+.glj_conteudo section h2 { color: var(--texto); font-size: clamp(1.7rem, 3.8vw, 3rem); }
+.glj_revista {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+.glj_revista #glj_secao2, .glj_participacao > section {
+    padding: clamp(1rem, 3vw, 2rem);
+    background: var(--painel);
+    border: 1px solid #554852;
+}
+.glj_lateral { margin: 0; border-radius: 0; background: #29202a; }
+.glj_gradeCultura { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; }
+.glj_cardCultura { padding: 0; overflow: hidden; border-radius: 0; }
+.glj_cardCultura img { width: 100%; border-radius: 0; aspect-ratio: 3 / 2; object-fit: cover; }
+.glj_cardCultura h3, .glj_cardCultura p { margin-inline: 1rem; }
+.glj_cardCultura:first-child { grid-row: span 2; display: flex; flex-direction: column; }
+.glj_cardCultura:first-child img { flex: 1; min-height: 0; }
+.glj_participacao { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+#glj_secao9 { border-top: .35rem solid #b44464; margin-top: 1rem; }
+.glj_rolagem { border: 1px solid #554852; }
+#glj_tabelaCena caption { padding: .8rem; background: #29202a; }
+#glj_tabelaCena thead { background: #302332; }
+#glj_tabelaCena tbody tr:nth-child(even) { background: #201b22; }
+@media (max-width: 900px) {
+    .glj_capa {
+        grid-template-areas: "texto" "mural";
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .glj_gradeCultura { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: auto; }
+    .glj_cardCultura:first-child { grid-row: auto; display: block; }
+}
+@media (max-width: 620px) {
+    .glj_revista, .glj_participacao, .glj_gradeCultura { grid-template-columns: minmax(0, 1fr); }
+}
+.glj_capa > .glj_voltar { grid-column: 1 / -1; justify-self: start; margin-top: 0; }
