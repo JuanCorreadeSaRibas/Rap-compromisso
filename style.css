@@ -1,0 +1,152 @@
+/* Tema e grade C: áreas nomeadas do portal. */
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+    margin: 0;
+    font: 1rem/1.55 system-ui, sans-serif;
+}
+.glj_portal {
+    --fundo: #141217;
+    --painel: #211d24;
+    --texto: #fff5e8;
+    --borda: #8d807d;
+    --destaque: #ffce38;
+
+    display: grid;
+    grid-template-areas: "cabecalho menu" "conteudo conteudo" "rodape rodape";
+    grid-template-columns: minmax(16rem, 1fr) 2fr;
+    background: var(--fundo);
+    color: var(--texto);
+}
+h1, h2 { line-height: 1.15; margin: 0 0 .8rem; }
+h1 { font-size: clamp(2rem, 5vw, 4rem); }
+h2 { color: var(--destaque); }
+p { margin: .4rem 0 .9rem; }
+a { color: var(--destaque); }
+img { display: block; max-width: 100%; height: auto; border-radius: .45rem; }
+button, input, textarea, select { font: inherit; }
+button, input, textarea, select {
+    background: var(--fundo);
+    color: var(--texto);
+    border: 1px solid var(--borda);
+    border-radius: .3rem;
+    padding: .45rem .65rem;
+    max-width: 100%;
+}
+button { cursor: pointer; }
+button:hover, button[aria-pressed="true"], button[aria-selected="true"] {
+    border-color: var(--destaque);
+    color: var(--destaque);
+}
+:focus-visible { outline: 2px solid var(--destaque); outline-offset: 3px; }
+#glj_topo { border-bottom: 1px solid var(--borda); }
+.glj_cabecalho, .glj_menu, .glj_rodape {
+    padding: clamp(1rem, 3vw, 2rem);
+    background: var(--painel);
+}
+.glj_cabecalho { grid-area: cabecalho; }
+.glj_menu { grid-area: menu; align-content: center; }
+.glj_menu ul, .glj_acoes { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem; }
+.glj_menu ul { list-style: none; padding: 0; }
+nav.glj_menu ul li a { display: block; padding: .35rem .65rem; }
+.glj_rodape { grid-area: rodape; text-align: center; }
+/* Grade B: conteúdo principal e área lateral. */
+.glj_conteudo {
+    grid-area: conteudo;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    width: min(100%, 86rem);
+    margin-inline: auto;
+    padding: 1rem;
+    align-items: start;
+}
+.glj_principal { min-width: 0; }
+section, .glj_lateral {
+    padding: clamp(1rem, 2vw, 1.5rem);
+    margin-bottom: 1rem;
+    border: 1px solid var(--borda);
+    border-radius: .55rem;
+    background: var(--painel);
+}
+#glj_secao1, #glj_secao2, #glj_secao3, #glj_secao4, #glj_secao5,
+#glj_secao6, #glj_secao7, #glj_secao8, #glj_secao9, #glj_secao10 {
+    scroll-margin-top: 1rem;
+}
+#glj_banner { width: 100%; margin-bottom: 1rem; }
+
+.glj_voltar { display: inline-block; margin-top: 1rem; font-size: .9rem; }
+/* Grade A: três colunas iguais para a galeria. */
+.glj_gradeCultura { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; }
+.glj_cardCultura { min-width: 0; padding: .65rem; border: 1px solid var(--borda); border-radius: .45rem; }
+.glj_cardCultura h3 { margin-bottom: .25rem; }
+.glj_rolagem { overflow-x: auto; }
+#glj_tabelaCena { width: 100%; border-collapse: collapse; }
+caption { font-weight: 700; padding-bottom: .65rem; }
+th, td { border: 1px solid var(--borda); padding: .5rem; text-align: left; }
+.glj_aba { white-space: nowrap; }
+.glj_painel { margin-top: 1rem; padding: .8rem; border: 1px solid var(--borda); }
+#glj_aba0, #glj_aba1, #glj_aba2, #glj_aba3, #glj_aba4 { min-height: 2.6rem; }
+#glj_painel0, #glj_painel1, #glj_painel2, #glj_painel3, #glj_painel4 { min-height: 4rem; }
+#glj_sugestao, #glj_faqSearch, #glj_item { margin: .4rem .3rem .4rem 0; }
+#glj_addSugestao, #glj_limpar { font-weight: 650; }
+#glj_sugestoes, #glj_lista { padding-left: 1.4rem; }
+.glj_categoria { margin-top: 1rem; }
+.glj_pergunta { padding: .55rem 0; border-bottom: 1px solid var(--borda); }
+summary { cursor: pointer; font-weight: 650; }
+#glj_semResultado, #glj_contador { margin-top: 1rem; font-weight: 650; }
+#glj_formLista { margin-bottom: .6rem; }
+#glj_filtro { min-width: 8rem; }
+.glj_itemLista { margin-bottom: .7rem; overflow-wrap: anywhere; }
+.glj_itemLista .glj_acoes { margin-top: .3rem; }
+.glj_concluido { text-decoration: line-through; }
+#glj_formulario fieldset { display: grid; gap: .55rem; min-width: 0; border: 1px solid var(--borda); }
+#glj_formulario label { font-weight: 650; }
+#glj_formulario button { justify-self: start; }
+#glj_nome, #glj_email, #glj_telefone, #glj_idade, #glj_expressao,
+#glj_data, #glj_formato, #glj_nota, #glj_impacto, #glj_critica { width: 100%; }
+#glj_presencial, #glj_digital, #glj_termos { accent-color: var(--destaque); }
+#glj_contatoTitulo { font-weight: 700; margin-bottom: .25rem; }
+#glj_termosTexto { font-size: .9rem; }
+@media (max-width: 850px) {
+    .glj_portal {
+        grid-template-areas: "cabecalho" "menu" "conteudo" "rodape";
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .glj_conteudo { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+    .glj_gradeCultura { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Letras de lambe-lambe e texturas geométricas inspiradas em muros urbanos. */
+.glj_cabecalho {
+    border-top: .65rem solid var(--destaque);
+    background: repeating-linear-gradient(135deg, #231d26 0 13px, #29202a 13px 15px);
+}
+.glj_cabecalho h1 {
+    max-width: 10ch;
+    font-family: Impact, "Arial Black", system-ui, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -.045em;
+    text-shadow: 3px 3px #873448;
+}
+.glj_chamada, .glj_selo {
+    display: inline-block;
+    padding: .35rem .65rem;
+    color: #17121b;
+    background: var(--destaque);
+    font-weight: 850;
+}
+.glj_selo { transform: rotate(-3deg); }
+.glj_menu a { text-underline-offset: .25em; }
+.glj_menu a:hover { background: #3c2936; }
+section { border-left: .35rem solid #b44464; }
+.glj_cardCultura { background: #2a222c; }
+.glj_cardCultura h3 { overflow-wrap: anywhere; }
+.glj_lateral { border-top: .4rem solid var(--destaque); }
+.glj_lateral ul { padding-left: 1.2rem; }
+.glj_rodape { border-bottom: .65rem solid var(--destaque); font-weight: 800; }
+.glj_aba[aria-selected="true"] { color: #17121b; background: var(--destaque); }
+.glj_pergunta[open] summary { color: var(--destaque); }
+button:disabled { opacity: .6; cursor: default; }
