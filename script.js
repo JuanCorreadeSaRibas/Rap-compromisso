@@ -252,3 +252,11 @@ document.getElementById("glj_limpar").addEventListener("click", () => {
 });
 renderizarLista();
 
+
+// Botão flutuante: aparece depois que a página é rolada.
+const botaoTopo = document.getElementById("glj_voltarTopo");
+const atualizarBotaoTopo = () => {
+    botaoTopo.classList.toggle("glj_escondido", window.scrollY < 400);
+};
+window.addEventListener("scroll", atualizarBotaoTopo);
+atualizarBotaoTopo();
