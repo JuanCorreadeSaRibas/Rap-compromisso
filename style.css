@@ -17,13 +17,17 @@ body {
     sans-serif;
 }
 .glj_portal {
-  --fundo: #101010;
-  --painel: #181818;
-  --painel2: #212121;
-  --borda: #343434;
-  --texto: #f4f1ea;
-  --suave: #b5b0a6;
-  --destaque: #ffcc36;
+  --fundo: #efe0c1;
+  --painel: #f9eed8;
+  --painel2: #e5d0aa;
+  --borda: #9f7f5e;
+  --texto: #3a241e;
+  --suave: #5f4336;
+  --destaque: #77263c;
+  --ouro: #d9a849;
+  --chocolate: #352019;
+  --roxo: #593852;
+  --laranja: #b45126;
 
   /* Grade C: áreas nomeadas organizam o portal inteiro. */
   display: grid;
@@ -109,7 +113,7 @@ button:disabled {
   gap: 0.3rem 1rem;
   margin: 0;
   padding: 0.5rem max(1rem, calc((100% - 78rem) / 2));
-  background: #000;
+  background: var(--chocolate);
   color: var(--destaque);
   font-size: 0.72rem;
   font-weight: 800;
@@ -153,22 +157,22 @@ button:disabled {
   place-items: center;
   width: 2.8rem;
   height: 2.8rem;
-  color: #101010;
-  background: var(--destaque);
+  color: var(--chocolate);
+  background: var(--ouro);
   border-radius: 0.6rem;
   font-weight: 950;
 }
 .glj_chamada {
   display: inline-block;
   padding: 0.6rem 1.15rem;
-  color: #101010;
-  background: var(--destaque);
+  color: var(--chocolate);
+  background: var(--ouro);
   border-radius: 999px;
   font-weight: 850;
   text-decoration: none;
 }
 .glj_chamada:hover {
-  background: #fff;
+  background: #f4cc75;
 }
 
 /* ===== MENU ===== */
@@ -196,8 +200,8 @@ nav.glj_menu ul li a {
   text-decoration: none;
 }
 nav.glj_menu ul li a:hover {
-  color: #101010;
-  background: var(--destaque);
+  color: var(--chocolate);
+  background: var(--ouro);
 }
 
 /* ===== CONTEÚDO ===== */
@@ -242,7 +246,9 @@ section {
   padding: clamp(2rem, 6vw, 5rem) max(1rem, calc((100% - 78rem) / 2))
     clamp(2rem, 4vw, 3rem);
   background:
-    radial-gradient(circle at 85% 0%, #2a2410 0, transparent 45%), var(--fundo);
+    radial-gradient(ellipse at 85% 0%, #d4ab71 0, transparent 65%),
+    repeating-linear-gradient(115deg, #fff2d83d 0 1px, transparent 1px 4px),
+    var(--fundo);
   border-bottom: 1px solid var(--borda);
 }
 .glj_capaTexto {
@@ -352,8 +358,8 @@ section {
   margin-top: 1rem;
   margin-bottom: 0.5rem;
   padding: 0.2rem 0.65rem;
-  color: #101010;
-  background: var(--destaque);
+  color: var(--chocolate);
+  background: var(--ouro);
   border-radius: 999px;
   font-size: 0.68rem;
   font-weight: 850;
@@ -373,8 +379,8 @@ section {
   text-decoration: none;
 }
 .glj_voltar:hover {
-  color: #101010;
-  background: var(--destaque);
+  color: var(--chocolate);
+  background: var(--ouro);
   border-color: var(--destaque);
 }
 .glj_capa > .glj_voltar {
@@ -449,8 +455,8 @@ td {
   border-radius: 999px;
 }
 .glj_aba[aria-selected="true"] {
-  color: #101010;
-  background: var(--destaque);
+  color: var(--chocolate);
+  background: var(--ouro);
   border-color: var(--destaque);
 }
 .glj_painel {
@@ -574,8 +580,8 @@ td {
 }
 #glj_formulario button {
   justify-self: start;
-  color: #101010;
-  background: var(--destaque);
+  color: var(--chocolate);
+  background: var(--ouro);
   border-color: var(--destaque);
   font-weight: 800;
 }
@@ -628,7 +634,7 @@ summary {
   grid-template-columns: 2fr 1fr 1fr;
   gap: 2rem;
   padding: clamp(2rem, 5vw, 3.5rem) max(1rem, calc((100% - 78rem) / 2));
-  background: #000;
+  background: var(--chocolate);
   border-top: 0.35rem solid var(--destaque);
 }
 .glj_logoTexto {
@@ -685,8 +691,8 @@ summary {
   place-items: center;
   width: 3.2rem;
   height: 3.2rem;
-  color: #101010;
-  background: var(--destaque);
+  color: var(--chocolate);
+  background: var(--ouro);
   border-radius: 50%;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
   font-size: 1.5rem;
@@ -698,7 +704,7 @@ summary {
     background 0.2s;
 }
 .glj_flutuante:hover {
-  background: #fff;
+  background: #f4cc75;
   transform: translateY(-3px);
 }
 .glj_flutuante.glj_escondido {
@@ -771,4 +777,68 @@ summary {
   .glj_flutuante {
     transition: none;
   }
+}
+
+/* Encarte de CD: papel, filetes de impressão e etiquetas da edição. */
+.glj_cabecalho,
+.glj_rodape {
+  --texto: #fff1d6;
+  --suave: #e3c8aa;
+  --destaque: #f0bf64;
+  background: var(--chocolate);
+}
+.glj_faixa {
+  background: #24130e;
+  border-bottom: 1px solid #80543b;
+}
+.glj_capa h1,
+.glj_conteudo h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--destaque);
+}
+.glj_capa h1 { overflow-wrap: anywhere; }
+.glj_capa h1 em { color: var(--chocolate); }
+.glj_capa .glj_numero {
+  justify-self: end;
+  position: relative;
+  padding: 1.7rem 1.25rem 1rem;
+  border-radius: .15rem;
+  box-shadow: .25rem .25rem 0 #9f7f5e;
+}
+.glj_numero .glj_volume {
+  display: inline-block;
+  width: fit-content;
+  position: absolute;
+  top: -.75rem;
+  right: .55rem;
+  padding: .15rem .5rem;
+  transform: rotate(4deg);
+  background: var(--roxo);
+  color: #fff1d6;
+  font-size: .72rem;
+  letter-spacing: .13em;
+}
+#glj_banner {
+  border: clamp(.3rem, 1vw, .8rem) solid var(--chocolate);
+  border-radius: .2rem;
+  box-shadow: 0 0 0 2px var(--ouro), .3rem .45rem 0 #966a4d;
+}
+.glj_cardCultura {
+  border-radius: .18rem;
+  box-shadow: .2rem .2rem 0 #c7a681;
+}
+.glj_cardCultura img { border-bottom: 3px solid var(--ouro); }
+.glj_tag { border-radius: .12rem; }
+.glj_cardCultura:nth-child(even) .glj_tag {
+  color: #fff1d6;
+  background: var(--roxo);
+}
+.glj_lateral {
+  border-radius: .1rem;
+  border-top-color: var(--laranja);
+  background: repeating-linear-gradient(transparent 0 1.65rem, #9f7f5e32 1.65rem calc(1.65rem + 1px)), var(--painel2);
+}
+.glj_lateral .glj_selo { transform: rotate(-3deg); background: var(--painel); }
+@media (max-width: 640px) {
+  .glj_capa .glj_numero { justify-self: start; }
 }
